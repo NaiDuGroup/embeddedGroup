@@ -37,8 +37,8 @@ int main(void)
 // Medium priorities
 #define LORAWAN_TASK_PRIORITY			( tskIDLE_PRIORITY + 2 )
 // Low priorities
-/* Task stack sizes*/
-/*
+ Task stack sizes
+
 #define TASK_MY_TASK_STACK				( configMINIMAL_STACK_SIZE )
 int main(void)
 {
@@ -64,6 +64,7 @@ int main(void)
 #include "Header/tempHumiditySensor.h"
 #include "Header/co2Sensor.h"
 #include "Header/lorawanDev.h"
+#include "display_7seg.h"
 #include <stdio.h>
 #include <stdio_driver.h>
 #include <avr/io.h>
@@ -80,6 +81,8 @@ int main (void)
 	 uint16_t ppm = 0.0;
 	 temperatureHumiditySensor_init();
 	 co2Sensor_init();
+	 display_7seg_init(NULL);
+	 display_7seg_power_up();
 	// lorawanDev_init();
 	// lorawanDevStart();
 	// lorawanDevSend_data();
@@ -93,13 +96,16 @@ int main (void)
 		temperatureHumidity_measure();
 		humidity = humidityGetValue();
 		temperature = temperatureGetValue();
-		
+		float temp = temperatureGetValue();
 		co2Sensor_measure();
 		ppm = co2Sensor_getValue();	
 		printf("humidity = %d \n", humidity);
 		printf("temperature = %d \n", temperature );
 		printf("co2 = %d \n", ppm);
+		display_7seg_display(temp/10,1);
 		_delay_ms(1000);
+		
+		
 			 
 	}
 }

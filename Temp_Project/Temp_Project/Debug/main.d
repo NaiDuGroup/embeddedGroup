@@ -31,7 +31,7 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  .././Header/co2Sensor.h ../IoT_SEP4/mh_z19.h ../IoT_SEP4/serial.h \
  .././Header/lorawanDev.h ../IoT_SEP4/lora_driver.h ../IoT_SEP4/ihal.h \
- ../IoT_SEP4/stdio_driver.h \
+ ../IoT_SEP4/display_7seg.h ../IoT_SEP4/stdio_driver.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h
 
 ../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h:
@@ -107,6 +107,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../IoT_SEP4/lora_driver.h:
 
 ../IoT_SEP4/ihal.h:
+
+../IoT_SEP4/display_7seg.h:
 
 ../IoT_SEP4/stdio_driver.h:
 

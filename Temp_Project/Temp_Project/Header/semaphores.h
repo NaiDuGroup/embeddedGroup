@@ -2,16 +2,16 @@
 /*
  * semaphores.h
  *
- * Created: 11/12/2019 13.15.37
+ * Created: 17/12/2019 10.56.39
  *  Author: DUNAI
  */ 
 
 #include "ATMEGA_FreeRTOS.h"
-#include <stdio.h>
 #include <semphr.h>
+#include <stdio.h>
 
-SemaphoreHandle_t co2Semaphore;
-SemaphoreHandle_t temperatureHumiditySemaphore;
-SemaphoreHandle_t loraWANSemaphore;
+SemaphoreHandle_t display7segSemaphore;
 
-void semaphores_init();
+
+void semaphore_init();
+

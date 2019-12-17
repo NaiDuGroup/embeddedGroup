@@ -161,7 +161,13 @@
     <Compile Include="co2Sensor.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="display7Seg.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Header\co2Sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Header\dispaly7Seg.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Header\LoRaWAN.h">
@@ -171,6 +177,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Header\myTimers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Header\semaphores.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Header\tempHumiditySensor.h">

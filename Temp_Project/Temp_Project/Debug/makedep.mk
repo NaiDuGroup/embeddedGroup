@@ -4,6 +4,8 @@
 
 co2Sensor.c
 
+display7Seg.c
+
 IoT_SEP4\example\loraWANHandler.c
 
 lorawanDev.c

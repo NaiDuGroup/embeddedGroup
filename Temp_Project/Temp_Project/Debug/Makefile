@@ -45,6 +45,7 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../co2Sensor.c \
+../display7Seg.c \
 ../IoT_SEP4/example/loraWANHandler.c \
 ../lorawanDev.c \
 ../main.c \
@@ -70,6 +71,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 co2Sensor.o \
+display7Seg.o \
 IoT_SEP4/example/loraWANHandler.o \
 lorawanDev.o \
 main.o \
@@ -88,6 +90,7 @@ VIA_FreeRTOS_AVRMEGA-master/src/variantHooks.o
 
 OBJS_AS_ARGS +=  \
 co2Sensor.o \
+display7Seg.o \
 IoT_SEP4/example/loraWANHandler.o \
 lorawanDev.o \
 main.o \
@@ -106,6 +109,7 @@ VIA_FreeRTOS_AVRMEGA-master/src/variantHooks.o
 
 C_DEPS +=  \
 co2Sensor.d \
+display7Seg.d \
 IoT_SEP4/example/loraWANHandler.d \
 lorawanDev.d \
 main.d \
@@ -124,6 +128,7 @@ VIA_FreeRTOS_AVRMEGA-master/src/variantHooks.d
 
 C_DEPS_AS_ARGS +=  \
 co2Sensor.d \
+display7Seg.d \
 IoT_SEP4/example/loraWANHandler.d \
 lorawanDev.d \
 main.d \
@@ -155,6 +160,13 @@ LINKER_SCRIPT_DEP+=
 
 # AVR32/GNU C Compiler
 ./co2Sensor.o: .././co2Sensor.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../IoT_SEP4" -I"../VIA_FreeRTOS_AVRMEGA-master/src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./display7Seg.o: .././display7Seg.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../IoT_SEP4" -I"../VIA_FreeRTOS_AVRMEGA-master/src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

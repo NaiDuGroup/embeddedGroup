@@ -2,25 +2,37 @@
 /*
  * semaphores.c
  *
- * Created: 11/12/2019 13.21.11
+ * Created: 16/12/2019 11.56.00
  *  Author: DUNAI
  */ 
-#include "Header/semaphores.h"
 
-co2Semaphore = xSemaphoreCreateMutex();
-if (co2Semaphore == NULL)
-{
-	co2Semaphore = xSemaphoreCreateMutex;
-}
+#include "semaphores.h"
 
-temperatureHumiditySemaphore = xSemaphoreCreateMutex();
-if (temperatureHumiditySemaphore == NULL)
+void semaphore_init()
 {
-	temperatureHumiditySemaphore = xSemaphoreCreateMutex;
-}
-
-loraWANSemaphore = xSemaphoreCreateMutex();
-if (loraWANSemaphore  == NULL)
-{
-	loraWANSemaphore  = xSemaphoreCreateMutex;
+	mainSemaphore = xSemaphoreCreateMutex();
+	if (mainSemaphore == NULL)
+	{
+		mainSemaphore = xSemaphoreCreateMutex();
+	}
+	
+	temperatureHumiditySemaphore = xSemaphoreCreateMutex();
+	if (temperatureHumiditySemaphore == NULL)
+	{
+		temperatureHumiditySemaphore = xSemaphoreCreateMutex();
+	}
+	
+	co2Semaphore = xSemaphoreCreateMutex();
+	if (co2Semaphore == NULL)
+	{
+		co2Semaphore = xSemaphoreCreateMutex();
+	}
+	
+	lorawanSemaphore = xSemaphoreCreateMutex();
+	if (lorawanSemaphore == NULL)
+	{
+		lorawanSemaphore = xSemaphoreCreateMutex();
+	}
+	
+	
 }
