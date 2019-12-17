@@ -58,7 +58,7 @@ int main(void)
 }
 */
 
-
+/*-------------------------------------------------------------------------
 
 #include "ATMEGA_FreeRTOS.h"
 #include "Header/tempHumiditySensor.h"
@@ -110,3 +110,45 @@ int main (void)
 	}
 }
 
+*/
+
+
+#include "ATMEGA_FreeRTOS.h"
+#include "../src/semphr.h"
+
+#include "../FreeRTOSTraceDriver/FreeRTOSTraceDriver.h"
+
+#include <stdio.h>
+#include <stdio_driver.h>
+
+
+#include "Header/myTimers.h"
+#include "Header/tempHumiditySensor.h"
+#include "Header/semaphores.h"
+#include "Header/board_tasks.h"
+#include "Header/co2Sensor.h"
+#include "Header/lorawanDev.h"
+
+int main(void)
+{
+	trace_init();
+	stdioCreate(0);
+
+	semaphore_init();
+	timers_init();
+	temperatureHumiditySensor_init();
+    co2Sensor_init();
+	lorawanDev_init();
+    
+
+	printf("Program starts");
+	
+	//xSemaphoreTake(temperatureHumiditySemaphore,portMAX_DELAY);
+
+	tasks_init();
+
+	vTaskStartScheduler();
+
+	while(1)
+	{}
+}

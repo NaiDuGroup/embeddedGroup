@@ -10,7 +10,10 @@
 #include <semphr.h>
 #include <stdio.h>
 
-SemaphoreHandle_t display7segSemaphore;
+SemaphoreHandle_t allSemaphores;
+SemaphoreHandle_t temperatureHumiditySemaphore;
+SemaphoreHandle_t co2Semaphore;
+SemaphoreHandle_t lorawanSemaphore;
 
 
 void semaphore_init();

@@ -15,7 +15,7 @@
  {
 	 if ( HIH8120_OK == hih8120Create())
 	 {
-		 printf("INITIALIZATION\n");
+		 printf("Initialization of hum temp sensors\n");
 	 }
 	 
  }

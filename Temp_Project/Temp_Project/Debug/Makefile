@@ -44,11 +44,13 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../board_tasks.c \
 ../co2Sensor.c \
-../display7Seg.c \
 ../IoT_SEP4/example/loraWANHandler.c \
 ../lorawanDev.c \
 ../main.c \
+../myTimers.c \
+../semaphores.c \
 ../tempHumiditySensor.c \
 ../VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.c \
 ../VIA_FreeRTOS_AVRMEGA-master/src/croutine.c \
@@ -70,11 +72,13 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+board_tasks.o \
 co2Sensor.o \
-display7Seg.o \
 IoT_SEP4/example/loraWANHandler.o \
 lorawanDev.o \
 main.o \
+myTimers.o \
+semaphores.o \
 tempHumiditySensor.o \
 VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.o \
 VIA_FreeRTOS_AVRMEGA-master/src/croutine.o \
@@ -89,11 +93,13 @@ VIA_FreeRTOS_AVRMEGA-master/src/timers.o \
 VIA_FreeRTOS_AVRMEGA-master/src/variantHooks.o
 
 OBJS_AS_ARGS +=  \
+board_tasks.o \
 co2Sensor.o \
-display7Seg.o \
 IoT_SEP4/example/loraWANHandler.o \
 lorawanDev.o \
 main.o \
+myTimers.o \
+semaphores.o \
 tempHumiditySensor.o \
 VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.o \
 VIA_FreeRTOS_AVRMEGA-master/src/croutine.o \
@@ -108,11 +114,13 @@ VIA_FreeRTOS_AVRMEGA-master/src/timers.o \
 VIA_FreeRTOS_AVRMEGA-master/src/variantHooks.o
 
 C_DEPS +=  \
+board_tasks.d \
 co2Sensor.d \
-display7Seg.d \
 IoT_SEP4/example/loraWANHandler.d \
 lorawanDev.d \
 main.d \
+myTimers.d \
+semaphores.d \
 tempHumiditySensor.d \
 VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.d \
 VIA_FreeRTOS_AVRMEGA-master/src/croutine.d \
@@ -127,11 +135,13 @@ VIA_FreeRTOS_AVRMEGA-master/src/timers.d \
 VIA_FreeRTOS_AVRMEGA-master/src/variantHooks.d
 
 C_DEPS_AS_ARGS +=  \
+board_tasks.d \
 co2Sensor.d \
-display7Seg.d \
 IoT_SEP4/example/loraWANHandler.d \
 lorawanDev.d \
 main.d \
+myTimers.d \
+semaphores.d \
 tempHumiditySensor.d \
 VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.d \
 VIA_FreeRTOS_AVRMEGA-master/src/croutine.d \
@@ -159,14 +169,14 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
-./co2Sensor.o: .././co2Sensor.c
+./board_tasks.o: .././board_tasks.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../IoT_SEP4" -I"../VIA_FreeRTOS_AVRMEGA-master/src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-./display7Seg.o: .././display7Seg.c
+./co2Sensor.o: .././co2Sensor.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../IoT_SEP4" -I"../VIA_FreeRTOS_AVRMEGA-master/src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -188,6 +198,20 @@ IoT_SEP4/example/loraWANHandler.o: ../IoT_SEP4/example/loraWANHandler.c
 	
 
 ./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../IoT_SEP4" -I"../VIA_FreeRTOS_AVRMEGA-master/src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./myTimers.o: .././myTimers.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../IoT_SEP4" -I"../VIA_FreeRTOS_AVRMEGA-master/src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./semaphores.o: .././semaphores.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../IoT_SEP4" -I"../VIA_FreeRTOS_AVRMEGA-master/src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

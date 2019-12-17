@@ -661,8 +661,8 @@ typedef QueueHandle_t SemaphoreHandle_t;
  * semphr. h
  * <pre>SemaphoreHandle_t xSemaphoreCreateMutex( void )</pre>
  *
- * Creates a new mutex type semaphore instance, and returns a handle by which
- * the new mutex can be referenced.
+ * Crea
+
  *
  * Internally, within the FreeRTOS implementation, mutex semaphores use a block
  * of memory, in which the mutex structure is stored.  If a mutex is created

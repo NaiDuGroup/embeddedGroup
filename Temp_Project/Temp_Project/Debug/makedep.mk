@@ -2,15 +2,19 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-co2Sensor.c
+board_tasks.c
 
-display7Seg.c
+co2Sensor.c
 
 IoT_SEP4\example\loraWANHandler.c
 
 lorawanDev.c
 
 main.c
+
+myTimers.c
+
+semaphores.c
 
 tempHumiditySensor.c
 

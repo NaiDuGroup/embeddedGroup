@@ -53,7 +53,7 @@ void lorawanDevStart()
 	
 	if (lora_driver_join(LoRa_OTAA) == LoRa_ACCEPTED)
 	{
-		printf("you are connected");
+		printf("you are connected\n");
 	}
 	
 }

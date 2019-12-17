@@ -158,16 +158,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="board_tasks.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="co2Sensor.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="display7Seg.c">
+    <Compile Include="Header\board_tasks.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Header\co2Sensor.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Header\dispaly7Seg.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Header\LoRaWAN.h">
@@ -254,6 +254,12 @@
     <None Include="VIA_FreeRTOS_AVRMEGA-master\Example\main.c">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="myTimers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="semaphores.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="tempHumiditySensor.c">
       <SubType>compile</SubType>
     </Compile>
