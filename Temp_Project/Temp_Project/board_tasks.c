@@ -68,14 +68,13 @@ void allTasks()
 		
 		vTaskDelay(5000/ portTICK_PERIOD_MS);
 		xSemaphoreGive(co2Semaphore);
-		
 		vTaskDelay(5000/ portTICK_PERIOD_MS);
 		xSemaphoreGive(temperatureHumiditySemaphore);
 		vTaskDelay(5000/ portTICK_PERIOD_MS);
 		xSemaphoreGive(fillPayloadQueueSemaphore);
 		vTaskDelay(5000/ portTICK_PERIOD_MS);
 		xSemaphoreGive(lorawanSemaphore);
-		vTaskDelay(40000 / portTICK_PERIOD_MS);
+		vTaskDelay(280000 / portTICK_PERIOD_MS);
 		
 	}
 }
