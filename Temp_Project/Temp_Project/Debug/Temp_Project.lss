@@ -19,7 +19,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 00003917  00000000  00000000  00013dbe  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00006a9d  00000000  00000000  000176d5  2**0
+  8 .debug_line   00006a9c  00000000  00000000  000176d5  2**0
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  000021bc  00000000  00000000  0001e174  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -597,7 +597,6 @@ void allTasks()
      466:	80 91 1f 1a 	lds	r24, 0x1A1F	; 0x801a1f <co2Semaphore>
      46a:	90 91 20 1a 	lds	r25, 0x1A20	; 0x801a20 <co2Semaphore+0x1>
      46e:	06 d7       	rcall	.+3596   	; 0x127c <xQueueGenericSend>
-		
 		vTaskDelay(5000/ portTICK_PERIOD_MS);
      470:	88 e3       	ldi	r24, 0x38	; 56
      472:	91 e0       	ldi	r25, 0x01	; 1
@@ -637,9 +636,9 @@ void allTasks()
      4ba:	80 91 19 1a 	lds	r24, 0x1A19	; 0x801a19 <lorawanSemaphore>
      4be:	90 91 1a 1a 	lds	r25, 0x1A1A	; 0x801a1a <lorawanSemaphore+0x1>
      4c2:	dc d6       	rcall	.+3512   	; 0x127c <xQueueGenericSend>
-		vTaskDelay(40000 / portTICK_PERIOD_MS);
-     4c4:	84 ec       	ldi	r24, 0xC4	; 196
-     4c6:	99 e0       	ldi	r25, 0x09	; 9
+		vTaskDelay(280000 / portTICK_PERIOD_MS);
+     4c4:	8c e5       	ldi	r24, 0x5C	; 92
+     4c6:	94 e4       	ldi	r25, 0x44	; 68
      4c8:	0e 94 a6 10 	call	0x214c	; 0x214c <vTaskDelay>
      4cc:	c3 cf       	rjmp	.-122    	; 0x454 <allTasks+0x2>
 
@@ -10422,8 +10421,8 @@ void vApplicationStackOverflowHook( TaskHandle_t xTask __attribute__((unused)), 
     4a02:	30 91 03 02 	lds	r19, 0x0203	; 0x800203 <__malloc_heap_start+0x1>
     4a06:	30 93 48 1a 	sts	0x1A48, r19	; 0x801a48 <__brkval+0x1>
     4a0a:	20 93 47 1a 	sts	0x1A47, r18	; 0x801a47 <__brkval>
-    4a0e:	20 91 00 02 	lds	r18, 0x0200	; 0x800200 <__DATA_REGION_ORIGIN__>
-    4a12:	30 91 01 02 	lds	r19, 0x0201	; 0x800201 <__DATA_REGION_ORIGIN__+0x1>
+    4a0e:	20 91 00 02 	lds	r18, 0x0200	; 0x800200 <__data_start>
+    4a12:	30 91 01 02 	lds	r19, 0x0201	; 0x800201 <__data_start+0x1>
     4a16:	21 15       	cp	r18, r1
     4a18:	31 05       	cpc	r19, r1
     4a1a:	41 f4       	brne	.+16     	; 0x4a2c <malloc+0xea>
