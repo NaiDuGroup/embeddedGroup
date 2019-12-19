@@ -1,4 +1,4 @@
-myTimers.d myTimers.o: .././myTimers.c .././Header/myTimers.h \
+myQueues.d myQueues.o: .././myQueues.c \
  ../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h \
@@ -21,14 +21,10 @@ myTimers.d myTimers.o: .././myTimers.c .././Header/myTimers.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/FreeRTOSVariant.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/task.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/list.h \
+ ../VIA_FreeRTOS_AVRMEGA-master/src/list.h .././Header/myQueues.h \
+ ../VIA_FreeRTOS_AVRMEGA-master/src/queue.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/timers.h .././Header/semaphores.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/semphr.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/queue.h
-
-.././Header/myTimers.h:
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h
 
 ../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h:
 
@@ -76,14 +72,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../VIA_FreeRTOS_AVRMEGA-master/src/list.h:
 
+.././Header/myQueues.h:
+
+../VIA_FreeRTOS_AVRMEGA-master/src/queue.h:
+
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h:
-
-../VIA_FreeRTOS_AVRMEGA-master/src/timers.h:
-
-.././Header/semaphores.h:
-
-../VIA_FreeRTOS_AVRMEGA-master/src/semphr.h:
-
-../VIA_FreeRTOS_AVRMEGA-master/src/queue.h:

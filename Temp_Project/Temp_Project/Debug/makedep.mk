@@ -12,7 +12,7 @@ lorawanDev.c
 
 main.c
 
-myTimers.c
+myQueues.c
 
 semaphores.c
 
@@ -24,7 +24,7 @@ VIA_FreeRTOS_AVRMEGA-master\src\croutine.c
 
 VIA_FreeRTOS_AVRMEGA-master\src\event_groups.c
 
-VIA_FreeRTOS_AVRMEGA-master\src\heap_3.c
+VIA_FreeRTOS_AVRMEGA-master\src\heap_4.c
 
 VIA_FreeRTOS_AVRMEGA-master\src\list.c
 

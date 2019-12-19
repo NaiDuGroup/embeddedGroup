@@ -5,41 +5,19 @@
  * Created: 17/12/2019 11.35.32
  *  Author: DUNAI
  */ 
-
+/*
 #include "Header/myTimers.h"
 #include "Header/semaphores.h"
 
 void timers_init()
 {
 	mainTimer = xTimerCreate( "main timer  \n",           // Just a text name, not used by the kernel.
-	                        ( 50000 / portTICK_PERIOD_MS), // The timer period in ticks.
+	                        ( 3400),						// The timer period in ticks.
 	                          pdFALSE,                    // The timer is a one-shot timer.
 	                          0,                          // The id is not used by the callback so can take any value.
 	                          mainTimerCallbackFunction    // The callback function that switches the LCD back-light off.
 	                        );
-	
 
-	temperatureHumidityTimer = xTimerCreate( "temp_hum_timer \n",           // Just a text name, not used by the kernel.
-										   ( 5000 / portTICK_PERIOD_MS), // The timer period in ticks.
-											pdFALSE,                    // The timer is a one-shot timer.
-										    0,                          // The id is not used by the callback so can take any value.
-										    temperatureHumidityCallbackFunction    // The callback function that switches the LCD back-light off.
-											);
-
-
-	co2Timer = xTimerCreate("co2_timer \n",           // Just a text name, not used by the kernel.
-						   ( 5000 / portTICK_PERIOD_MS), // The timer period in ticks.
-							pdFALSE,                    // The timer is a one-shot timer.
-							0,                          // The id is not used by the callback so can take any value.
-							co2CallbackFunction    // The callback function that switches the LCD back-light off.
-							);
-
-	lorawanTimer = xTimerCreate("lorawan timer \n",           // Just a text name, not used by the kernel.
-				   ( 5000 / portTICK_PERIOD_MS), // The timer period in ticks.
-					pdFALSE,                    // The timer is a one-shot timer.
-					0,                          // The id is not used by the callback so can take any value.
-					lorawanCallbackFunction    // The callback function that switches the LCD back-light off.
-					);
 }
 
 
@@ -51,50 +29,44 @@ void mainTimerCallbackFunction(TimerHandle_t xTimer)
 		
 	}
 	
-	if (xSemaphoreGive(allSemaphores) != pdTRUE)
+	if (xSemaphoreGive(lorawanSemaphore) != pdTRUE)
 	{
 		
 	}
 		
-	xTimerStart(temperatureHumidityTimer,0);
-}
-
-void temperatureHumidityCallbackFunction(TimerHandle_t xTimer)
-{
-	printf("temperatureHumidityCallbackFunction using the semaphore (5seconds)\n");
-	if (xSemaphoreTake(allSemaphores,portMAX_DELAY))
+	vTaskDelay(5000/portTICK_PERIOD_MS);
+	
+	
+	
+	
+	printf("temperatureHumidity using the semaphore (5seconds)\n");
+	if (xSemaphoreTake(lorawanSemaphore,portMAX_DELAY))
 	{
 		
 	}
 	
-	if (xSemaphoreGive(temperatureHumiditySemaphore) != pdTRUE)
+	if (xSemaphoreGive(temperatureHumidityCo2Semaphore) != pdTRUE)
+	{
+		
+	}	
+	
+	vTaskDelay(5000/portTICK_PERIOD_MS);
+	
+	printf("co2 using the semaphore (5seconds)\n");
+	if (xSemaphoreTake(temperatureHumidityCo2Semaphore,portMAX_DELAY))
 	{
 		
 	}
 	
-	xTimerStart(co2Timer,0);
-}
-
-void co2CallbackFunction(TimerHandle_t xTimer)
-{
-	printf("co2CallbackFunction using the semaphore (5seconds)\n");
-	if (xSemaphoreTake(temperatureHumiditySemaphore,portMAX_DELAY))
+	if (xSemaphoreGive(temperatureHumidityCo2Semaphore) != pdTRUE)
 	{
 		
 	}
 	
-	if (xSemaphoreGive(co2Semaphore) != pdTRUE)
-	{
-		
-	}
+	vTaskDelay(5000/portTICK_PERIOD_MS);
 	
-	xTimerStart(lorawanTimer,0);
-}
-
-void lorawanCallbackFunction(TimerHandle_t xTimer)
-{
-	printf("lorawanCallbackFunction using the semaphore (5seconds)\n");
-	if (xSemaphoreTake(co2Semaphore,portMAX_DELAY))
+	printf("lorawan using the semaphore (5seconds)\n");
+	if (xSemaphoreTake(temperatureHumidityCo2Semaphore,portMAX_DELAY))
 	{
 		
 	}
@@ -103,6 +75,10 @@ void lorawanCallbackFunction(TimerHandle_t xTimer)
 	{
 		
 	}
-	
+		
 	xTimerStart(mainTimer,0);
+	
+	
+	
 }
+*/

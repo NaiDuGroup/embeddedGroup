@@ -10,29 +10,10 @@
 
 void semaphore_init() 
 {
-	allSemaphores = xSemaphoreCreateMutex();
-	if( allSemaphores != NULL )
-	{
-		printf("allSemaphores was created successfully\n");
-	}
-
-	temperatureHumiditySemaphore = xSemaphoreCreateMutex();
-	if( temperatureHumiditySemaphore != NULL )
-	{
-		printf("temperatureHumiditySemaphore was created successfully\n");
-	}
-
+	temperatureSemaphore = xSemaphoreCreateMutex();
 	co2Semaphore = xSemaphoreCreateMutex();
-	if ( co2Semaphore != NULL)
-	{
-		printf("co2Semaphore was created successfully\n");
-	}
-
+	humiditySemaphore = xSemaphoreCreateMutex();
 	lorawanSemaphore = xSemaphoreCreateMutex();
-	if ( lorawanSemaphore != NULL)
-	{
-		printf("Lorawan was created successfully\n");
-	}
 
 }
 

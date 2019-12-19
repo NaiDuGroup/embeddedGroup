@@ -10,9 +10,9 @@
 #include <semphr.h>
 #include <stdio.h>
 
-SemaphoreHandle_t allSemaphores;
-SemaphoreHandle_t temperatureHumiditySemaphore;
+SemaphoreHandle_t temperatureSemaphore;
 SemaphoreHandle_t co2Semaphore;
+SemaphoreHandle_t humiditySemaphore;
 SemaphoreHandle_t lorawanSemaphore;
 
 

@@ -10,20 +10,27 @@
 #include "Header/lorawanDev.h"
 #include "Header/co2Sensor.h"
 #include "Header/tempHumiditySensor.h"
+#include "Header/myQueues.h"
 
 #define LORA_appEUI "ba4b140f562bc777"
 #define LORA_appKEY "8390d15cabd2baab4468e37d88c54efa"
+
+
 
 #define LORA_INIT_TASK_PRIORITY 7
 void lorawanDev_init()
 {
 	hal_create(LORA_INIT_TASK_PRIORITY+1);
 	lora_driver_create(ser_USART1);
+	_delay_ms(10000);
 	
 }
 
 void lorawanDevStart()
 {
+	
+	
+	_delay_ms(10000);
 	lora_driver_reset_rn2483(1);
 	vTaskDelay(2);
 	lora_driver_reset_rn2483(0);
@@ -51,18 +58,33 @@ void lorawanDevStart()
 		printf("lora_driver_set_otaa_identity error\n");
 	}
 	
-	if (lora_driver_join(LoRa_OTAA) == LoRa_ACCEPTED)
+	
+	e_LoRa_return_code_t rc;
+	
+	while(rc != LoRa_ACCEPTED)
 	{
-		printf("you are connected\n");
+		printf("LORAWAN device is not connected\n");
+		rc = lora_driver_join(LoRa_OTAA);
+		_delay_ms(1000);
 	}
+	
+	printf("LORAWAN device is connected \n");
+	
 	
 }
 
 void lorawanDevSend_data()
 {
-	uint16_t tHumidity = humidityGetValue();
-	uint16_t tTemperature = temperatureGetValue();
-	uint16_t tCO2 = co2Sensor_getValue();
+	
+	uint16_t tTemperature = xQueueReceive(payloadQueue, // queue handle
+									  &tTemperature, // address of temperature placeholder
+									  portMAX_DELAY);
+	uint16_t tCO2 = xQueueReceive(payloadQueue, // queue handle
+									  &tCO2, // address of temperature placeholder
+									  portMAX_DELAY);
+    uint16_t tHumidity = xQueueReceive(payloadQueue, // queue handle
+									  &tHumidity, // address of temperature placeholder
+								      portMAX_DELAY);
 	
 	lora_payload_t uplink_payload;
 	

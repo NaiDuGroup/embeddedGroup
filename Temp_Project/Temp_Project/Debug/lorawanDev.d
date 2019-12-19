@@ -31,7 +31,8 @@ lorawanDev.d lorawanDev.o: .././lorawanDev.c .././Header/lorawanDev.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- .././Header/tempHumiditySensor.h ../IoT_SEP4/hih8120.h
+ .././Header/tempHumiditySensor.h ../IoT_SEP4/hih8120.h \
+ .././Header/myQueues.h ../VIA_FreeRTOS_AVRMEGA-master/src/queue.h
 
 .././Header/lorawanDev.h:
 
@@ -106,3 +107,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././Header/tempHumiditySensor.h:
 
 ../IoT_SEP4/hih8120.h:
+
+.././Header/myQueues.h:
+
+../VIA_FreeRTOS_AVRMEGA-master/src/queue.h:

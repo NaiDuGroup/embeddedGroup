@@ -1,6 +1,9 @@
-board_tasks.d board_tasks.o: .././board_tasks.c .././Header/board_tasks.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h \
+VIA_FreeRTOS_AVRMEGA-master/src/heap_4.d \
+ VIA_FreeRTOS_AVRMEGA-master/src/heap_4.o: \
+ ../VIA_FreeRTOS_AVRMEGA-master/src/heap_4.c \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
+ ../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/FreeRTOSConfig.h \
@@ -19,32 +22,14 @@ board_tasks.d board_tasks.o: .././board_tasks.c .././Header/board_tasks.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\wdt.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/mpu_wrappers.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/FreeRTOSVariant.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/task.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/list.h .././Header/co2Sensor.h \
- ../IoT_SEP4/mh_z19.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h \
- ../IoT_SEP4/serial.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- .././Header/tempHumiditySensor.h ../IoT_SEP4/hih8120.h \
- .././Header/lorawanDev.h ../IoT_SEP4/lora_driver.h ../IoT_SEP4/ihal.h \
- .././Header/semaphores.h ../VIA_FreeRTOS_AVRMEGA-master/src/semphr.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/queue.h .././Header/myTimers.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/timers.h \
- ../VIA_FreeRTOS_AVRMEGA-master/src/task.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\time.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- .././Header/myQueues.h ../VIA_FreeRTOS_AVRMEGA-master/src/queue.h
+ ../VIA_FreeRTOS_AVRMEGA-master/src/list.h
 
-.././Header/board_tasks.h:
-
-../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h:
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
+
+../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h:
 
@@ -82,56 +67,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../VIA_FreeRTOS_AVRMEGA-master/src/FreeRTOSVariant.h:
 
-../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h:
-
 ../VIA_FreeRTOS_AVRMEGA-master/src/task.h:
 
 ../VIA_FreeRTOS_AVRMEGA-master/src/list.h:
-
-.././Header/co2Sensor.h:
-
-../IoT_SEP4/mh_z19.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h:
-
-../IoT_SEP4/serial.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
-
-.././Header/tempHumiditySensor.h:
-
-../IoT_SEP4/hih8120.h:
-
-.././Header/lorawanDev.h:
-
-../IoT_SEP4/lora_driver.h:
-
-../IoT_SEP4/ihal.h:
-
-.././Header/semaphores.h:
-
-../VIA_FreeRTOS_AVRMEGA-master/src/semphr.h:
-
-../VIA_FreeRTOS_AVRMEGA-master/src/queue.h:
-
-.././Header/myTimers.h:
-
-../VIA_FreeRTOS_AVRMEGA-master/src/timers.h:
-
-../VIA_FreeRTOS_AVRMEGA-master/src/task.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\time.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
-
-.././Header/myQueues.h:
-
-../VIA_FreeRTOS_AVRMEGA-master/src/queue.h:

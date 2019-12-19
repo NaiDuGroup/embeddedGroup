@@ -129,26 +129,29 @@ int main (void)
 #include "Header/co2Sensor.h"
 #include "Header/lorawanDev.h"
 
+#include "task.h"
+
+
 int main(void)
 {
 	trace_init();
 	stdioCreate(0);
 
 	semaphore_init();
-	timers_init();
+	queue_create();
 	temperatureHumiditySensor_init();
     co2Sensor_init();
 	lorawanDev_init();
     
 
-	printf("Program starts");
+	//printf("Program starts");
 	
-	//xSemaphoreTake(temperatureHumiditySemaphore,portMAX_DELAY);
-
 	tasks_init();
-
+	
 	vTaskStartScheduler();
 
 	while(1)
-	{}
+	{
+		
+	}
 }

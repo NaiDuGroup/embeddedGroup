@@ -170,13 +170,10 @@
     <Compile Include="Header\co2Sensor.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Header\LoRaWAN.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Header\lorawanDev.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Header\myTimers.h">
+    <Compile Include="Header\myQueues.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Header\semaphores.h">
@@ -254,7 +251,7 @@
     <None Include="VIA_FreeRTOS_AVRMEGA-master\Example\main.c">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="myTimers.c">
+    <Compile Include="myQueues.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="semaphores.c">
@@ -290,7 +287,7 @@
     <Compile Include="VIA_FreeRTOS_AVRMEGA-master\src\FreeRTOSVariant.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="VIA_FreeRTOS_AVRMEGA-master\src\heap_3.c">
+    <Compile Include="VIA_FreeRTOS_AVRMEGA-master\src\heap_4.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="VIA_FreeRTOS_AVRMEGA-master\src\list.c">

@@ -7,106 +7,153 @@
  */ 
 
 #include "Header/board_tasks.h"
+#include "Header/myQueues.h"
 
-TaskHandle_t xHandle = NULL;
+
 
 void tasks_init()
 {
+	
+	
+	
 	xTaskCreate(
-	main_tasks,
-	"start main tasks\n",
+	getTemperature_Task,
+	"getTemperature_Task_taskCreate\n",
+	configMINIMAL_STACK_SIZE,
+	( void * ) 1,
+	configMAX_PRIORITIES - 2,
+	NULL);
+	
+	xTaskCreate(
+	getCo2_Task,
+	"getCo2_Task_taskCreate\n",
+	configMINIMAL_STACK_SIZE,
+	( void * ) 1,
+	configMAX_PRIORITIES - 3,
+	NULL);
+	
+	xTaskCreate(
+	getHumidity_Task,
+	"getHumidity_Task_taskCreate\n",
+	configMINIMAL_STACK_SIZE,
+	( void * ) 1,
+	configMAX_PRIORITIES - 4,
+	NULL);
+	
+	xTaskCreate(
+	lorawanSend_Task,
+	"lorawanSend_Task_taskCreate\n",
 	configMINIMAL_STACK_SIZE,
 	( void * ) 1,
 	configMAX_PRIORITIES - 1,
-	&xHandle);
+	NULL);
 
-	xTaskCreate(
-	temp_humidity_task,
-	"start temp_hum_task\n",
-	configMINIMAL_STACK_SIZE,
-	( void* ) 1,
-	configMAX_PRIORITIES - 2,
-	&xHandle);
-
-	xTaskCreate(
-	co2_task,
-	"start co2_task\n",
-	configMINIMAL_STACK_SIZE,
-	( void* ) 1,
-	configMAX_PRIORITIES - 2,
-	&xHandle);
-
-    xTaskCreate(
-    lorawan_task,
-    "start lorawan_task\n",
-    configMINIMAL_STACK_SIZE,
-    ( void* ) 1,
-    configMAX_PRIORITIES - 2,
-    &xHandle);
+	
 
 }
 
-void main_tasks(void *pvParameters)
+void getTemperature_Task(void *pvParameters)
 {
-
+	uint16_t temperature = 0;
+    
 	for( ;; )
 	{
-		if (xSemaphoreTake( allSemaphores, portMAX_DELAY ) == pdTRUE)
-		{
-			if (xTimerReset(temperatureHumidityTimer,0) != pdTRUE)
-				xTimerStart(temperatureHumidityTimer,0);
-
-			xSemaphoreGive( allSemaphores);
-			vTaskDelay(65000/ portTICK_PERIOD_MS); //  55 seconds
-		}
-	}
-}
-
-void temp_humidity_task(void *pvParameters)
-{
-
-	for( ;; )
-	{
-		if (xSemaphoreTake( temperatureHumiditySemaphore, portMAX_DELAY ) == pdTRUE)
+		if (xSemaphoreTake(temperatureSemaphore,1000 / portTICK_PERIOD_MS))
 		{
 			temperatureHumidity_measure();
-			printf("humidity = %d \n", humidityGetValue());
-			printf("temperature = %d \n", temperatureGetValue());
+			temperature = temperatureGetValue();
+			printf("temperature = %d \n", temperature);
 			
-			xSemaphoreGive(temperatureHumiditySemaphore);
-		    vTaskDelay(65000/ portTICK_PERIOD_MS); //55 seconds
+			xSemaphoreGive(temperatureSemaphore);
+			
+			xQueueSend(
+			payloadQueue, //queue handle
+			(void*) &temperature,	//pointer to the temp
+			0);
+			
 		}
+		
+		else
+		{
+			printf("temperature_task failed to get temperature\n");
+		}
+		vTaskDelay(60000 / portTICK_PERIOD_MS); // 5 second
+		
 	}
 }
 
-void co2_task(void *pvParameters)
+void getCo2_Task(void *pvParameters)
 {
-
+    uint16_t co2 = 0;
+	
 	for( ;; )
 	{
-		if (xSemaphoreTake( co2Semaphore, portMAX_DELAY ) == pdTRUE)
+		if (xSemaphoreTake(co2Semaphore,1000 / portTICK_PERIOD_MS))
 		{
 			co2Sensor_measure();
 			printf("co2 = %d \n", co2Sensor_getValue());
-			
 			xSemaphoreGive(co2Semaphore);
-			vTaskDelay(65000/ portTICK_PERIOD_MS); //55 seconds
+			
+			xQueueSend(
+			payloadQueue, //queue handle
+			(void*) &co2,	//pointer to the temp
+			0);
 		}
+		
+		else
+		{
+			printf("co2_task failed to get co2Value\n");
+		}
+		vTaskDelay(60000 / portTICK_PERIOD_MS); // 5 seconds
 	}
 }
 
-void lorawan_task(void *pvParameters)
+void getHumidity_Task(void *pvParameters)
 {
-	lorawanDevStart();
+	
+	uint16_t humidity = 0;
+
 	for( ;; )
 	{
-		if (xSemaphoreTake( lorawanSemaphore, portMAX_DELAY ) == pdTRUE)
+		if (xSemaphoreTake(humiditySemaphore,1000 / portTICK_PERIOD_MS))
 		{
-			lorawanDevSend_data();
-			printf("data send\n");
+			temperatureHumidity_measure();
+			printf("humidity = %d \n", humidityGetValue());
+			xSemaphoreGive(humiditySemaphore);
 			
-			xSemaphoreGive(lorawanSemaphore);
-			vTaskDelay(65000/ portTICK_PERIOD_MS); //55 seconds
+			xQueueSend(
+			payloadQueue, //queue handle
+			(void*) &humidity,	//pointer to the temp
+			0);
 		}
+		
+		else
+		{
+			printf("getHumidity_task failed to get temperature\n");
+		}
+		vTaskDelay(60000 / portTICK_PERIOD_MS); // 5 second
 	}
 }
+
+void lorawanSend_Task(void *pvParameters)
+{
+	lorawanDevStart();
+	
+	for( ;; )
+	{
+		if (xSemaphoreTake(lorawanSemaphore,1000 / portTICK_PERIOD_MS))
+		{
+			lorawanDevSend_data();
+			printf("Data sent to Loriot!\n");
+			xSemaphoreGive(lorawanSemaphore);
+		}
+		
+		else
+		{
+			printf("lorawanSend_task failed to send data\n");
+		}
+		vTaskDelay(60000 / portTICK_PERIOD_MS); // 60 second
+	}
+}
+
+

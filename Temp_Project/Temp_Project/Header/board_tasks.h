@@ -18,17 +18,13 @@
 #include <task.h>
 #include <time.h>
 
-TaskHandle_t mainTaskHandler;
-TaskHandle_t tempHumTaskHandler;
-TaskHandle_t co2TaskHandler;
-TaskHandle_t lorawanTaskHandler;
-
 void tasks_init();
 
-void main_tasks(void *pvParameters);
-void temp_humidity_task(void *pvParameters);
-void co2_task(void *pvParameters);
-void lorawan_task(void *pvParameters);
+void getTemperature_Task(void *pvParameters);
+void getCo2_Task(void *pvParameters);
+void getHumidity_Task(void *pvParameters);
+void lorawanSend_Task(void *pvParameters);
+
 
 
 

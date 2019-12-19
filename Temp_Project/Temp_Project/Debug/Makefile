@@ -49,13 +49,13 @@ C_SRCS +=  \
 ../IoT_SEP4/example/loraWANHandler.c \
 ../lorawanDev.c \
 ../main.c \
-../myTimers.c \
+../myQueues.c \
 ../semaphores.c \
 ../tempHumiditySensor.c \
 ../VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.c \
 ../VIA_FreeRTOS_AVRMEGA-master/src/croutine.c \
 ../VIA_FreeRTOS_AVRMEGA-master/src/event_groups.c \
-../VIA_FreeRTOS_AVRMEGA-master/src/heap_3.c \
+../VIA_FreeRTOS_AVRMEGA-master/src/heap_4.c \
 ../VIA_FreeRTOS_AVRMEGA-master/src/list.c \
 ../VIA_FreeRTOS_AVRMEGA-master/src/port.c \
 ../VIA_FreeRTOS_AVRMEGA-master/src/queue.c \
@@ -77,13 +77,13 @@ co2Sensor.o \
 IoT_SEP4/example/loraWANHandler.o \
 lorawanDev.o \
 main.o \
-myTimers.o \
+myQueues.o \
 semaphores.o \
 tempHumiditySensor.o \
 VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.o \
 VIA_FreeRTOS_AVRMEGA-master/src/croutine.o \
 VIA_FreeRTOS_AVRMEGA-master/src/event_groups.o \
-VIA_FreeRTOS_AVRMEGA-master/src/heap_3.o \
+VIA_FreeRTOS_AVRMEGA-master/src/heap_4.o \
 VIA_FreeRTOS_AVRMEGA-master/src/list.o \
 VIA_FreeRTOS_AVRMEGA-master/src/port.o \
 VIA_FreeRTOS_AVRMEGA-master/src/queue.o \
@@ -98,13 +98,13 @@ co2Sensor.o \
 IoT_SEP4/example/loraWANHandler.o \
 lorawanDev.o \
 main.o \
-myTimers.o \
+myQueues.o \
 semaphores.o \
 tempHumiditySensor.o \
 VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.o \
 VIA_FreeRTOS_AVRMEGA-master/src/croutine.o \
 VIA_FreeRTOS_AVRMEGA-master/src/event_groups.o \
-VIA_FreeRTOS_AVRMEGA-master/src/heap_3.o \
+VIA_FreeRTOS_AVRMEGA-master/src/heap_4.o \
 VIA_FreeRTOS_AVRMEGA-master/src/list.o \
 VIA_FreeRTOS_AVRMEGA-master/src/port.o \
 VIA_FreeRTOS_AVRMEGA-master/src/queue.o \
@@ -119,13 +119,13 @@ co2Sensor.d \
 IoT_SEP4/example/loraWANHandler.d \
 lorawanDev.d \
 main.d \
-myTimers.d \
+myQueues.d \
 semaphores.d \
 tempHumiditySensor.d \
 VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.d \
 VIA_FreeRTOS_AVRMEGA-master/src/croutine.d \
 VIA_FreeRTOS_AVRMEGA-master/src/event_groups.d \
-VIA_FreeRTOS_AVRMEGA-master/src/heap_3.d \
+VIA_FreeRTOS_AVRMEGA-master/src/heap_4.d \
 VIA_FreeRTOS_AVRMEGA-master/src/list.d \
 VIA_FreeRTOS_AVRMEGA-master/src/port.d \
 VIA_FreeRTOS_AVRMEGA-master/src/queue.d \
@@ -140,13 +140,13 @@ co2Sensor.d \
 IoT_SEP4/example/loraWANHandler.d \
 lorawanDev.d \
 main.d \
-myTimers.d \
+myQueues.d \
 semaphores.d \
 tempHumiditySensor.d \
 VIA_FreeRTOS_AVRMEGA-master/FreeRTOSTraceDriver/FreeRTOSTraceDriver.d \
 VIA_FreeRTOS_AVRMEGA-master/src/croutine.d \
 VIA_FreeRTOS_AVRMEGA-master/src/event_groups.d \
-VIA_FreeRTOS_AVRMEGA-master/src/heap_3.d \
+VIA_FreeRTOS_AVRMEGA-master/src/heap_4.d \
 VIA_FreeRTOS_AVRMEGA-master/src/list.d \
 VIA_FreeRTOS_AVRMEGA-master/src/port.d \
 VIA_FreeRTOS_AVRMEGA-master/src/queue.d \
@@ -204,7 +204,7 @@ IoT_SEP4/example/loraWANHandler.o: ../IoT_SEP4/example/loraWANHandler.c
 	@echo Finished building: $<
 	
 
-./myTimers.o: .././myTimers.c
+./myQueues.o: .././myQueues.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../IoT_SEP4" -I"../VIA_FreeRTOS_AVRMEGA-master/src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -246,7 +246,7 @@ VIA_FreeRTOS_AVRMEGA-master/src/event_groups.o: ../VIA_FreeRTOS_AVRMEGA-master/s
 	@echo Finished building: $<
 	
 
-VIA_FreeRTOS_AVRMEGA-master/src/heap_3.o: ../VIA_FreeRTOS_AVRMEGA-master/src/heap_3.c
+VIA_FreeRTOS_AVRMEGA-master/src/heap_4.o: ../VIA_FreeRTOS_AVRMEGA-master/src/heap_4.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../IoT_SEP4" -I"../VIA_FreeRTOS_AVRMEGA-master/src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
