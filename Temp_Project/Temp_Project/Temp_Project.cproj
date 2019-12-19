@@ -242,9 +242,9 @@
     <Compile Include="lorawanDev.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="main.c">
+    <None Include="main.c">
       <SubType>compile</SubType>
-    </Compile>
+    </None>
     <None Include="VIA_FreeRTOS_AVRMEGA-master\Example\LoRaWAN.c">
       <SubType>compile</SubType>
     </None>
@@ -258,6 +258,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="tempHumiditySensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Test\minunit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Test\minunit.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="VIA_FreeRTOS_AVRMEGA-master\FreeRTOSTraceDriver\FreeRTOSTraceDriver.c">
@@ -358,6 +364,7 @@
     <Folder Include="IoT_SEP4\" />
     <Folder Include="IoT_SEP4\example\" />
     <Folder Include="Header" />
+    <Folder Include="Test" />
     <Folder Include="VIA_FreeRTOS_AVRMEGA-master\" />
     <Folder Include="VIA_FreeRTOS_AVRMEGA-master\Example\" />
     <Folder Include="VIA_FreeRTOS_AVRMEGA-master\FreeRTOSTraceDriver\" />

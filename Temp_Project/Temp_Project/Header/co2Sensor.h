@@ -17,7 +17,6 @@
 #include <stdint.h>
 #include <util/delay.h>
 
-uint16_t co2_test;
 
 /**
  * \ingroup co2Sensor

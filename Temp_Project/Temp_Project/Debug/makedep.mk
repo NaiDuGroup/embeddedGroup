@@ -10,13 +10,13 @@ IoT_SEP4\example\loraWANHandler.c
 
 lorawanDev.c
 
-main.c
-
 myQueues.c
 
 semaphores.c
 
 tempHumiditySensor.c
+
+Test\minunit.c
 
 VIA_FreeRTOS_AVRMEGA-master\FreeRTOSTraceDriver\FreeRTOSTraceDriver.c
 

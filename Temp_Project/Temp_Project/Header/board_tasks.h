@@ -17,7 +17,6 @@
 #include "tempHumiditySensor.h"
 #include "lorawanDev.h"
 #include "semaphores.h"
-#include "myTimers.h"
 #include "myQueues.h"
 
 
@@ -64,7 +63,7 @@ void allTasks();
  * tasks for getting the humidity and temperature readings and prepare for the payload
  */
  
-void getTemperatxureHumidity_Task(void *pvParameters);
+void getTemperatureHumidity_Task(void *pvParameters);
 
  /**
  * \ingroup board_tasks

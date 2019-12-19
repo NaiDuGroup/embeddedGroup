@@ -18,7 +18,6 @@
 #include <stdint.h>
 #include <util/delay.h>
 
-uint16_t temp_hum_test;
 
 /**
  * \ingroup tempHumiditySensor

@@ -80,7 +80,7 @@ void allTasks()
 }
 
 void getTemperatureHumidity_Task(void *pvParameters)
-{
+	{
     
 	for( ;; )
 	{
