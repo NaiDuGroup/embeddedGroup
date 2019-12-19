@@ -1,20 +1,34 @@
 #pragma once
-/*
- * semaphores.h
+/**
+ * 
+ * \file
+ * \authors Alexandru, Anatolii, Zsolt, Jacek
+ * \version 1.0.0
  *
- * Created: 17/12/2019 10.56.39
- *  Author: DUNAI
- */ 
+ * \defgroup semaphores
+ * \brief creating the semaphores
+ *
+ * This file contains functions responsible for manipulating with Semaphores
+ */
 
 #include "ATMEGA_FreeRTOS.h"
 #include <semphr.h>
 #include <stdio.h>
 
+/**
+ * \ingroup semaphores
+ * \brief 4 created semaphores
+ * 
+ */
 SemaphoreHandle_t temperatureHumiditySemaphore;
 SemaphoreHandle_t co2Semaphore;
 SemaphoreHandle_t fillPayloadQueueSemaphore;
 SemaphoreHandle_t lorawanSemaphore;
 
-
+/**
+ * \ingroup lorawanDev
+ * \brief Initializes the semaphores
+ * 
+ */
 void semaphore_init();
 

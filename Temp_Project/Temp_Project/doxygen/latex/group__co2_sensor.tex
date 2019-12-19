@@ -1,0 +1,44 @@
+\hypertarget{group__co2_sensor}{}\doxysection{Co2\+Sensor}
+\label{group__co2_sensor}\index{Co2Sensor@{Co2Sensor}}
+
+
+This file contains functions responsible for manipulating with M\+H\+\_\+z19 sensor.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__co2_sensor_ga3f62466db4561c4ac2b1d4992c84d8b3}\label{group__co2_sensor_ga3f62466db4561c4ac2b1d4992c84d8b3}} 
+void \mbox{\hyperlink{group__co2_sensor_ga3f62466db4561c4ac2b1d4992c84d8b3}{co2\+Sensor\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the M\+H\+\_\+z19 sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__co2_sensor_gaecbe9e819d38834b7f280526b2156245}\label{group__co2_sensor_gaecbe9e819d38834b7f280526b2156245}} 
+void \mbox{\hyperlink{group__co2_sensor_gaecbe9e819d38834b7f280526b2156245}{co2\+Sensor\+\_\+measure}} ()
+\begin{DoxyCompactList}\small\item\em performs the measuring \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__co2_sensor_ga643ea68c8fb8d392b68e32148ff049a7}\label{group__co2_sensor_ga643ea68c8fb8d392b68e32148ff049a7}} 
+void \mbox{\hyperlink{group__co2_sensor_ga643ea68c8fb8d392b68e32148ff049a7}{co2\+Sensor\+\_\+callback}} (uint16\+\_\+t ppm)
+\begin{DoxyCompactList}\small\item\em Callback Function The call back function will be called by the driver when a new C\+O2 value is returned by the sensor. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__co2_sensor_gaaa5caf5d7ab6675516713a9f1aecd441}{co2\+Sensor\+\_\+get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em gets the co2 value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains functions responsible for manipulating with M\+H\+\_\+z19 sensor. 
+
+This file contains functions responsible for initializing, measuring and getting the values of the sensor 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__co2_sensor_gaaa5caf5d7ab6675516713a9f1aecd441}\label{group__co2_sensor_gaaa5caf5d7ab6675516713a9f1aecd441}} 
+\index{Co2Sensor@{Co2Sensor}!co2Sensor\_getValue@{co2Sensor\_getValue}}
+\index{co2Sensor\_getValue@{co2Sensor\_getValue}!Co2Sensor@{Co2Sensor}}
+\doxysubsubsection{\texorpdfstring{co2Sensor\_getValue()}{co2Sensor\_getValue()}}
+{\footnotesize\ttfamily uint16\+\_\+t co2\+Sensor\+\_\+get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the co2 value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em co2} & value of a measurement \\
+\hline
+\end{DoxyParams}

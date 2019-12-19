@@ -1,0 +1,33 @@
+\hypertarget{temp_humidity_sensor_8h}{}\doxysection{temp\+Humidity\+Sensor.\+h File Reference}
+\label{temp_humidity_sensor_8h}\index{tempHumiditySensor.h@{tempHumiditySensor.h}}
+{\ttfamily \#include \char`\"{}A\+T\+M\+E\+G\+A\+\_\+\+Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$hih8120.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__temp_humidity_sensor_ga3b9260242801e90c33b98477ed253f3f}{temperature\+Humidity\+Sensor\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the hih8120sensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__temp_humidity_sensor_ga4d51d1a6762d1b54bcc5a85dfc53a779}{temperature\+Humidity\+\_\+measure}} ()
+\begin{DoxyCompactList}\small\item\em measures the humidity and temperature Wakes up the sensor with a 50ms delay, takes the measuring \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__temp_humidity_sensor_ga0a040a8cd953b2fc34df9ee346cd757f}{temperature\+Get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em gets the temperature value \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__temp_humidity_sensor_ga0fdd375302706a53706df8c5dd8e02f6}{humidity\+Get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em gets the humidity value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{temp_humidity_sensor_8h_a5e855df29ef856551b7e26a734012348}\label{temp_humidity_sensor_8h_a5e855df29ef856551b7e26a734012348}} 
+uint16\+\_\+t {\bfseries temp\+\_\+hum\+\_\+test}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Authors}
+Alexandru, Anatolii, Zsolt, Jacek
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}

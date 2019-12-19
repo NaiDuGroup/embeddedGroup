@@ -1,0 +1,46 @@
+\hypertarget{group__board__tasks}{}\doxysection{Board\+\_\+tasks}
+\label{group__board__tasks}\index{Board\_tasks@{Board\_tasks}}
+
+
+creatie all the tasks  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__board__tasks_ga77bbf88fbecf73800c39fa4a887a506a}\label{group__board__tasks_ga77bbf88fbecf73800c39fa4a887a506a}} 
+void \mbox{\hyperlink{group__board__tasks_ga77bbf88fbecf73800c39fa4a887a506a}{tasks\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em create the tasks Create 5 tasks \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__board__tasks_ga3936f8443fd10649b3563efb5999d787}\label{group__board__tasks_ga3936f8443fd10649b3563efb5999d787}} 
+void \mbox{\hyperlink{group__board__tasks_ga3936f8443fd10649b3563efb5999d787}{all\+Tasks}} ()
+\begin{DoxyCompactList}\small\item\em assign delays to semaphores \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__board__tasks_ga793520dca8ab5229edab6e25603b1b21}\label{group__board__tasks_ga793520dca8ab5229edab6e25603b1b21}} 
+void \mbox{\hyperlink{group__board__tasks_ga793520dca8ab5229edab6e25603b1b21}{get\+Temperatxure\+Humidity\+\_\+\+Task}} (void $\ast$pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em get the humidity and temp tasks for getting the humidity and temperature readings and prepare for the payload \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__board__tasks_ga4ea764afe0d0132474dace5ca99d109e}\label{group__board__tasks_ga4ea764afe0d0132474dace5ca99d109e}} 
+void \mbox{\hyperlink{group__board__tasks_ga4ea764afe0d0132474dace5ca99d109e}{get\+Co2\+\_\+\+Task}} (void $\ast$pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em get the co2 tasks for getting the co2 readings and prepare for the payload \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__board__tasks_ga9b5172a0be047d0afd436065285de2fd}\label{group__board__tasks_ga9b5172a0be047d0afd436065285de2fd}} 
+void \mbox{\hyperlink{group__board__tasks_ga9b5172a0be047d0afd436065285de2fd}{fill\+Payload\+Queue\+\_\+\+Task}} (void $\ast$pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em fill up the queue tasks for putting the 3 readings inside the queue \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__board__tasks_ga0e029fa24a48cff137b2296b931e4970}\label{group__board__tasks_ga0e029fa24a48cff137b2296b931e4970}} 
+void \mbox{\hyperlink{group__board__tasks_ga0e029fa24a48cff137b2296b931e4970}{lorawan\+Send\+\_\+\+Task}} (void $\ast$pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em send the data tasks for sending all the readings to the server \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__board__tasks_ga4cccc66cf229dadb97651797ed0bd463}\label{group__board__tasks_ga4cccc66cf229dadb97651797ed0bd463}} 
+\mbox{\hyperlink{structdata__t}{data\+\_\+t}} \mbox{\hyperlink{group__board__tasks_ga4cccc66cf229dadb97651797ed0bd463}{temperature}}
+\begin{DoxyCompactList}\small\item\em creates a data type Create data type for the Humidity reading \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__board__tasks_ga0b402e65f577dc1273e416c82ef4dc2b}\label{group__board__tasks_ga0b402e65f577dc1273e416c82ef4dc2b}} 
+\mbox{\hyperlink{structdata__t}{data\+\_\+t}} \mbox{\hyperlink{group__board__tasks_ga0b402e65f577dc1273e416c82ef4dc2b}{humidity}}
+\begin{DoxyCompactList}\small\item\em creates a data type Create data type for the Temperature reading \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__board__tasks_ga5a793e07777a05a705bd4e8e7f1d675c}\label{group__board__tasks_ga5a793e07777a05a705bd4e8e7f1d675c}} 
+\mbox{\hyperlink{structdata__t}{data\+\_\+t}} \mbox{\hyperlink{group__board__tasks_ga5a793e07777a05a705bd4e8e7f1d675c}{co2}}
+\begin{DoxyCompactList}\small\item\em creates a data type Create data type for C\+O2 readings \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+creatie all the tasks 
+
+This file contains functions responsible for manipulating the tasks 

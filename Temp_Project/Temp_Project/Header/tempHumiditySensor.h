@@ -1,10 +1,14 @@
 #pragma once
-/*
- * tempHumiditySensors.h
+/**
+ * 
+ * \file
+ * \authors Alexandru, Anatolii, Zsolt, Jacek\version 1.0.0
  *
- * Created: 09/12/2019 12.30.49
- *  Author: DUNAI
- */ 
+ * \defgroup tempHumiditySensor
+ * \brief This file contains functions responsible for manipulating with HIH8120 sensor
+ *
+ * This file contains functions responsible for initializing, waking up, getting measurments and getting the values of the sensor
+ */
 
 
 #include "ATMEGA_FreeRTOS.h"
@@ -14,9 +18,35 @@
 #include <stdint.h>
 #include <util/delay.h>
 
+uint16_t temp_hum_test;
+
+/**
+ * \ingroup tempHumiditySensor
+ * \brief Initializes the hih8120sensor
+ * 
+ */
 void temperatureHumiditySensor_init();
+
+/**
+ * \ingroup tempHumiditySensor
+ * \brief measures the humidity and temperature
+ * Wakes up the sensor with a 50ms delay, takes the measuring
+ */
 void temperatureHumidity_measure();
+
+/**
+ * \ingroup tempHumiditySensor
+ * \brief gets the temperature value
+ * \param[out] temperature value of a measurement
+ */
 uint16_t temperatureGetValue();
+
+/**
+ * \ingroup tempHumiditySensor
+ * \brief gets the humidity value
+ * \param[out] Humidity value of a measurement
+ */
 uint16_t humidityGetValue();
+
 
 

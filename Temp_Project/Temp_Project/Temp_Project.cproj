@@ -347,6 +347,12 @@
     <Compile Include="VIA_FreeRTOS_AVRMEGA-master\src\variantHooks.c">
       <SubType>compile</SubType>
     </Compile>
+    <None Include="vsix\extension.xdkmanifest">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="vsix\License.txt">
+      <SubType>compile</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IoT_SEP4\" />
@@ -356,6 +362,7 @@
     <Folder Include="VIA_FreeRTOS_AVRMEGA-master\Example\" />
     <Folder Include="VIA_FreeRTOS_AVRMEGA-master\FreeRTOSTraceDriver\" />
     <Folder Include="VIA_FreeRTOS_AVRMEGA-master\src\" />
+    <Folder Include="vsix\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="IoT_SEP4\.gitignore">

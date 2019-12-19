@@ -1,0 +1,58 @@
+\hypertarget{group__temp_humidity_sensor}{}\doxysection{Temp\+Humidity\+Sensor}
+\label{group__temp_humidity_sensor}\index{TempHumiditySensor@{TempHumiditySensor}}
+
+
+This file contains functions responsible for manipulating with H\+I\+H8120 sensor.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__temp_humidity_sensor_ga3b9260242801e90c33b98477ed253f3f}\label{group__temp_humidity_sensor_ga3b9260242801e90c33b98477ed253f3f}} 
+void \mbox{\hyperlink{group__temp_humidity_sensor_ga3b9260242801e90c33b98477ed253f3f}{temperature\+Humidity\+Sensor\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the hih8120sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__temp_humidity_sensor_ga4d51d1a6762d1b54bcc5a85dfc53a779}\label{group__temp_humidity_sensor_ga4d51d1a6762d1b54bcc5a85dfc53a779}} 
+void \mbox{\hyperlink{group__temp_humidity_sensor_ga4d51d1a6762d1b54bcc5a85dfc53a779}{temperature\+Humidity\+\_\+measure}} ()
+\begin{DoxyCompactList}\small\item\em measures the humidity and temperature Wakes up the sensor with a 50ms delay, takes the measuring \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__temp_humidity_sensor_ga0a040a8cd953b2fc34df9ee346cd757f}{temperature\+Get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em gets the temperature value \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__temp_humidity_sensor_ga0fdd375302706a53706df8c5dd8e02f6}{humidity\+Get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em gets the humidity value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains functions responsible for manipulating with H\+I\+H8120 sensor. 
+
+This file contains functions responsible for initializing, waking up, getting measurments and getting the values of the sensor 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__temp_humidity_sensor_ga0fdd375302706a53706df8c5dd8e02f6}\label{group__temp_humidity_sensor_ga0fdd375302706a53706df8c5dd8e02f6}} 
+\index{TempHumiditySensor@{TempHumiditySensor}!humidityGetValue@{humidityGetValue}}
+\index{humidityGetValue@{humidityGetValue}!TempHumiditySensor@{TempHumiditySensor}}
+\doxysubsubsection{\texorpdfstring{humidityGetValue()}{humidityGetValue()}}
+{\footnotesize\ttfamily uint16\+\_\+t humidity\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the humidity value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em Humidity} & value of a measurement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__temp_humidity_sensor_ga0a040a8cd953b2fc34df9ee346cd757f}\label{group__temp_humidity_sensor_ga0a040a8cd953b2fc34df9ee346cd757f}} 
+\index{TempHumiditySensor@{TempHumiditySensor}!temperatureGetValue@{temperatureGetValue}}
+\index{temperatureGetValue@{temperatureGetValue}!TempHumiditySensor@{TempHumiditySensor}}
+\doxysubsubsection{\texorpdfstring{temperatureGetValue()}{temperatureGetValue()}}
+{\footnotesize\ttfamily uint16\+\_\+t temperature\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the temperature value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em temperature} & value of a measurement \\
+\hline
+\end{DoxyParams}

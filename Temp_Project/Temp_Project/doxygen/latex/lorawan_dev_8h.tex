@@ -1,0 +1,24 @@
+\hypertarget{lorawan_dev_8h}{}\doxysection{lorawan\+Dev.\+h File Reference}
+\label{lorawan_dev_8h}\index{lorawanDev.h@{lorawanDev.h}}
+{\ttfamily \#include \char`\"{}A\+T\+M\+E\+G\+A\+\_\+\+Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$lora\+\_\+driver.\+h$>$}\newline
+{\ttfamily \#include $<$ihal.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__lorawan_dev_gadd7adbd6d1052a9e76814118667fa8cf}{lorawan\+Dev\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes Lora\+Wan. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lorawan_dev_gad91b8cc8e18257f286e393c58ece75ae}{lorawan\+Dev\+Start}} ()
+\begin{DoxyCompactList}\small\item\em starts Lora\+Wan This function resets the driver, sets the device\textquotesingle{}s identity ( appeui, app\+\_\+key, dev\+\_\+eui) and connects to the server \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lorawan_dev_ga55be5567a45afdcdd2475eee5798854f}{lorawan\+Dev\+Send\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em sends data to the server Takes out the 3 readings from the queue, creates a payload of 6 bytes and sends it to the server \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Authors}
+Alexandru, Anatolii, Zsolt, Jacek 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}

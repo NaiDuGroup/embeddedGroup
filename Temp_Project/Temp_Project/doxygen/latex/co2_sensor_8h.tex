@@ -1,0 +1,33 @@
+\hypertarget{co2_sensor_8h}{}\doxysection{co2\+Sensor.\+h File Reference}
+\label{co2_sensor_8h}\index{co2Sensor.h@{co2Sensor.h}}
+{\ttfamily \#include \char`\"{}A\+T\+M\+E\+G\+A\+\_\+\+Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$mh\+\_\+z19.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__co2_sensor_ga3f62466db4561c4ac2b1d4992c84d8b3}{co2\+Sensor\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the M\+H\+\_\+z19 sensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__co2_sensor_gaecbe9e819d38834b7f280526b2156245}{co2\+Sensor\+\_\+measure}} ()
+\begin{DoxyCompactList}\small\item\em performs the measuring \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__co2_sensor_ga643ea68c8fb8d392b68e32148ff049a7}{co2\+Sensor\+\_\+callback}} (uint16\+\_\+t ppm)
+\begin{DoxyCompactList}\small\item\em Callback Function The call back function will be called by the driver when a new C\+O2 value is returned by the sensor. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__co2_sensor_gaaa5caf5d7ab6675516713a9f1aecd441}{co2\+Sensor\+\_\+get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em gets the co2 value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{co2_sensor_8h_a9cb0cd9a6b158b6fbf2dd06114fe9739}\label{co2_sensor_8h_a9cb0cd9a6b158b6fbf2dd06114fe9739}} 
+uint16\+\_\+t {\bfseries co2\+\_\+test}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Authors}
+Alexandru, Anatolii, Zsolt, Jacek 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
