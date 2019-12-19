@@ -22,15 +22,12 @@ void lorawanDev_init()
 {
 	hal_create(LORA_INIT_TASK_PRIORITY+1);
 	lora_driver_create(ser_USART1);
-	_delay_ms(10000);
 	
 }
 
 void lorawanDevStart()
 {
-	
-	
-	_delay_ms(10000);
+	e_LoRa_return_code_t rc;
 	lora_driver_reset_rn2483(1);
 	vTaskDelay(2);
 	lora_driver_reset_rn2483(0);
@@ -50,7 +47,7 @@ void lorawanDevStart()
 	static char dev_eui[17];
 	if (lora_driver_get_rn2483_hweui(dev_eui) != LoRA_OK)
 	{
-		printf("lora_driver_get_rn2483_hweui error");
+		printf("lora_driver_get_rn2483_hweui error\n");
 	}
 	
 	if (lora_driver_set_otaa_identity(LORA_appEUI,LORA_appKEY,dev_eui) != LoRA_OK)
@@ -58,14 +55,11 @@ void lorawanDevStart()
 		printf("lora_driver_set_otaa_identity error\n");
 	}
 	
-	
-	e_LoRa_return_code_t rc;
-	
 	while(rc != LoRa_ACCEPTED)
 	{
 		printf("LORAWAN device is not connected\n");
 		rc = lora_driver_join(LoRa_OTAA);
-		_delay_ms(1000);
+		vTaskDelay(2000 / portTICK_PERIOD_MS);
 	}
 	
 	printf("LORAWAN device is connected \n");
@@ -75,17 +69,35 @@ void lorawanDevStart()
 
 void lorawanDevSend_data()
 {
+	uint16_t tTemperature = 0; 
+	uint16_t tCO2 = 0; 
+	uint16_t tHumidity = 0;
 	
-	uint16_t tTemperature = xQueueReceive(payloadQueue, // queue handle
-									  &tTemperature, // address of temperature placeholder
-									  portMAX_DELAY);
-	uint16_t tCO2 = xQueueReceive(payloadQueue, // queue handle
-									  &tCO2, // address of temperature placeholder
-									  portMAX_DELAY);
-    uint16_t tHumidity = xQueueReceive(payloadQueue, // queue handle
-									  &tHumidity, // address of temperature placeholder
-								      portMAX_DELAY);
+	data_t received;
 	
+	
+	for (int i = 0; i < 3; i++)
+	{
+			
+		xQueueReceive(payloadQueue, // queue handle
+									  &received, // address of temperature placeholder
+									  portMAX_DELAY);
+									  
+		if (received.data_type == 0)
+		{
+			tTemperature = received.value;
+		}
+		else if (received.data_type == 1)
+		{
+			tHumidity = received.value;	
+		}
+		else
+		{
+			tCO2 = received.value;
+		}
+	
+	}
+
 	lora_payload_t uplink_payload;
 	
 	uplink_payload.len = 6; // Length of the actual payload

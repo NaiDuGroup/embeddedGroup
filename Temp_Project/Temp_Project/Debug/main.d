@@ -25,6 +25,7 @@ main.d main.o: .././main.c \
  ../VIA_FreeRTOS_AVRMEGA-master/src/../src/semphr.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/../src/queue.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/../src/task.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/../FreeRTOSTraceDriver/FreeRTOSTraceDriver.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
@@ -37,13 +38,12 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  .././Header/semaphores.h ../VIA_FreeRTOS_AVRMEGA-master/src/semphr.h \
  .././Header/board_tasks.h .././Header/co2Sensor.h ../IoT_SEP4/mh_z19.h \
- ../IoT_SEP4/serial.h .././Header/tempHumiditySensor.h \
- .././Header/lorawanDev.h ../IoT_SEP4/lora_driver.h ../IoT_SEP4/ihal.h \
- .././Header/semaphores.h .././Header/myTimers.h \
+ ../IoT_SEP4/serial.h .././Header/lorawanDev.h ../IoT_SEP4/lora_driver.h \
+ ../IoT_SEP4/ihal.h .././Header/myTimers.h .././Header/myQueues.h \
+ ../VIA_FreeRTOS_AVRMEGA-master/src/queue.h \
  ../VIA_FreeRTOS_AVRMEGA-master/src/task.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\time.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- .././Header/co2Sensor.h .././Header/lorawanDev.h
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h
 
 ../VIA_FreeRTOS_AVRMEGA-master/src/ATMEGA_FreeRTOS.h:
 
@@ -97,6 +97,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../VIA_FreeRTOS_AVRMEGA-master/src/../src/task.h:
 
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
+
 ../VIA_FreeRTOS_AVRMEGA-master/src/../FreeRTOSTraceDriver/FreeRTOSTraceDriver.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
@@ -133,24 +135,20 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../IoT_SEP4/serial.h:
 
-.././Header/tempHumiditySensor.h:
-
 .././Header/lorawanDev.h:
 
 ../IoT_SEP4/lora_driver.h:
 
 ../IoT_SEP4/ihal.h:
 
-.././Header/semaphores.h:
-
 .././Header/myTimers.h:
+
+.././Header/myQueues.h:
+
+../VIA_FreeRTOS_AVRMEGA-master/src/queue.h:
 
 ../VIA_FreeRTOS_AVRMEGA-master/src/task.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\time.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
-
-.././Header/co2Sensor.h:
-
-.././Header/lorawanDev.h:

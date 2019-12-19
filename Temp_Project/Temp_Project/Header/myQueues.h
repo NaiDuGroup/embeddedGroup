@@ -1,4 +1,4 @@
-
+#pragma once
 /*
  * myQueues.S
  *
@@ -11,6 +11,12 @@
  #include <stdio.h>
  
  QueueHandle_t payloadQueue;
+ 
+  typedef struct  
+ {
+	 uint8_t data_type;
+	 uint16_t value;
+ } data_t; 
  
  void queue_create();
  

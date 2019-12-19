@@ -12,5 +12,5 @@
 
  void queue_create()
  {
-	 payloadQueue = xQueueCreate(3, sizeof(uint16_t));
+	 payloadQueue = xQueueCreate(3, sizeof(data_t));
  }

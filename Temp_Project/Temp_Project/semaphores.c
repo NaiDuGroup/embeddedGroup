@@ -10,11 +10,29 @@
 
 void semaphore_init() 
 {
-	temperatureSemaphore = xSemaphoreCreateMutex();
-	co2Semaphore = xSemaphoreCreateMutex();
-	humiditySemaphore = xSemaphoreCreateMutex();
-	lorawanSemaphore = xSemaphoreCreateMutex();
+	if (temperatureHumiditySemaphore == NULL)
+	{
+		temperatureHumiditySemaphore = xSemaphoreCreateBinary();
+	}
+	
+	if (co2Semaphore == NULL)
+	{
+		co2Semaphore = xSemaphoreCreateBinary();
+	}
+	
+	if (fillPayloadQueueSemaphore == NULL)
+	{
+		fillPayloadQueueSemaphore = xSemaphoreCreateBinary();
+	}
+	
+	if (lorawanSemaphore == NULL)
+	{
+		lorawanSemaphore = xSemaphoreCreateBinary();
+	}
+	
 
+	
+	
 }
 
 

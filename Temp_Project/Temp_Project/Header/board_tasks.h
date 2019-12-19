@@ -1,4 +1,4 @@
-
+#pragma once
 /*
  * board_tasks.h
  *
@@ -13,16 +13,23 @@
 #include "lorawanDev.h"
 #include "semaphores.h"
 #include "myTimers.h"
+#include "myQueues.h"
 
 
 #include <task.h>
 #include <time.h>
 
+
+extern data_t temperature;
+extern data_t humidity;
+extern data_t co2;
+
 void tasks_init();
 
-void getTemperature_Task(void *pvParameters);
+void allTasks();
+void getTemperatureHumidity_Task(void *pvParameters);
 void getCo2_Task(void *pvParameters);
-void getHumidity_Task(void *pvParameters);
+void fillPayloadQueue_Task(void *pvParameters);
 void lorawanSend_Task(void *pvParameters);
 
 

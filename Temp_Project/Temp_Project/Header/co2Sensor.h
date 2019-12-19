@@ -1,4 +1,4 @@
-
+#pragma once
 /*
  * co2Sensor.h
  *

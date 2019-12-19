@@ -1,4 +1,4 @@
-
+#pragma once
 /*
  * semaphores.h
  *
@@ -10,9 +10,9 @@
 #include <semphr.h>
 #include <stdio.h>
 
-SemaphoreHandle_t temperatureSemaphore;
+SemaphoreHandle_t temperatureHumiditySemaphore;
 SemaphoreHandle_t co2Semaphore;
-SemaphoreHandle_t humiditySemaphore;
+SemaphoreHandle_t fillPayloadQueueSemaphore;
 SemaphoreHandle_t lorawanSemaphore;
 
 
